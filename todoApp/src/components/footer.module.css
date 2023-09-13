@@ -1,0 +1,16 @@
+.footer_container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 1.5rem;
+    padding: 10px;
+    margin: 10px;
+    background-color: rgb(133, 129, 129);
+}
+
+.footer_container>p{
+    font-size: 15px;
+    color: rgb(230, 232, 234);
+}

@@ -1,0 +1,20 @@
+label,input,textarea,.button{
+    display: block;
+    width: 100%;
+    padding: .5em;
+    font-size: 1.2rem;
+}
+.button{
+    margin-top: 25px;
+    background-color: #8bcbff;
+    border: none;
+    border-radius: 8px;
+    font-size: 30px;
+}
+.toggleButton{
+   padding: 10px;
+}
+.button_containner{
+    display: flex;
+    justify-content: flex-end;
+}
