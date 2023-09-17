@@ -18,3 +18,11 @@ label,input,textarea,.button{
     display: flex;
     justify-content: flex-end;
 }
+
+.checkbox{
+    display: inline;
+    width: 5%;
+    padding: 1em;
+    margin: 20px 20px;
+    height: 20px;
+}
