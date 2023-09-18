@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState } from 'react';
 import styles from './form.module.css'
 import {useDispatch} from 'react-redux'
@@ -59,18 +60,18 @@ const Form = () => {
 
             {showForm && <form >
                 <label htmlFor="title">Title</label>
-                <input type="text" value={title} onChange={(e)=>setTitle(e.target.value)} />
+                <input data-test='title' type="text" value={title} onChange={(e)=>setTitle(e.target.value)} />
 
                 <label htmlFor="description">Description</label>
-                <textarea value={desc} onChange={(e)=>setDesc(e.target.value)} name="desc" id="desc" cols="30" rows="10"></textarea>
+                <textarea data-test='desc' value={desc} onChange={(e)=>setDesc(e.target.value)} name="desc" id="desc" cols="30" rows="10"></textarea>
 
                 <label htmlFor="time">Time</label>
-                <input value={time} onChange={(e)=>setTime(e.target.value)} type="text" name="time" id="time" />
+                <input data-test='time' value={time} onChange={(e)=>setTime(e.target.value)} type="text" name="time" id="time" />
                 
                 <label htmlFor="reminder">Remind me</label>
-                <input className={styles.checkbox} value={reminder} onChange={(e)=>setReminder(!reminder)} type="checkbox" name="checkbox" id="checkbox" />
+                <input data-test='reminder' className={styles.checkbox} value={reminder} onChange={(e)=>setReminder(!reminder)} type="checkbox" name="checkbox" id="checkbox" />
 
-                <button className={styles.button} onClick={addTodo}>Add to list</button>
+                <button data-test='add-to-list' className={styles.button} onClick={addTodo}>Add to list</button>
 
             {update && <button className={styles.button} onClick={addTodo} style={{background:'#f5f5c8'}}>Update</button>}
             </form>}
@@ -79,4 +80,4 @@ const Form = () => {
      );
 }
  
-export default Form;
+export default React.memo(Form);
