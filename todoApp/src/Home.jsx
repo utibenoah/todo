@@ -16,6 +16,9 @@ const Home = () => {
     const reverseReminder=(id)=>{
         dispatch(toggleReminder(id))
     }
+    const showForm=(id)=>{
+        console.log(id)
+    }
 
 
 
@@ -23,7 +26,10 @@ const Home = () => {
         <div className={styles.home_container}>
 
 
-            <Form />
+            <Form  showForm={showForm}/>
+
+            
+            <p>No List item. </p>
             
             {list && list.map((list)=>{
                return <div key={list.id} className={styles.list_card}
