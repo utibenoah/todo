@@ -4,7 +4,7 @@ import styles from './form.module.css'
 import {useDispatch} from 'react-redux'
 import {addToList} from '../app/Features/TodoList/todoListSlice'
 
-const Form = () => {
+const Form = ({formShow}) => {
     const [showForm, setShowForm]=useState(false)
     const [newTask, setNewTask]=useState('New Todo')
     const [update, setUpdate]=useState(false)
@@ -35,6 +35,7 @@ const Form = () => {
         setTitle('')
         setDesc('')
         setTime('')
+        setReminder(false)
  
     }
 
@@ -48,11 +49,11 @@ const Form = () => {
         <div className="form_containner">
 
             <div className={styles.button_containner}>
-                <button style={showForm ===true?{
+                <button data-test="toggleButton" style={showForm ===true?{
                         backgroundColor:'red'
                     }: {
                         backgroundColor:'green'
-                    }} onClick={toggleForm} className={styles.toggleButton}>{newTask}
+                    }} onClick={()=>{toggleForm();formShow(showForm)}} className={styles.toggleButton}>{newTask}
                 </button>
             </div>
             

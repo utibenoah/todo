@@ -15,5 +15,8 @@ body{
   margin: 0 auto;
   overflow-y: auto;
 }
+button{
+  cursor: pointer;
+}
 
 

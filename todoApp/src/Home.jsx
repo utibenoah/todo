@@ -8,7 +8,11 @@ import { useState } from 'react';
 const Home = () => {
     const dispatch=useDispatch()
     const list=useSelector((state)=>state.todoList.numberofTodo)
+    const [toggleForm,setToggleForm]=useState(false)
 
+
+    const formShow=(id)=>setToggleForm(id)
+  
     const deletTodo=(id)=>{
        dispatch(removeTodoFromLocalStorage(id))
     }
@@ -16,9 +20,7 @@ const Home = () => {
     const reverseReminder=(id)=>{
         dispatch(toggleReminder(id))
     }
-    const showForm=(id)=>{
-        console.log(id)
-    }
+    
 
 
 
@@ -26,11 +28,17 @@ const Home = () => {
         <div className={styles.home_container}>
 
 
-            <Form  showForm={showForm}/>
+            <Form  formShow={formShow} />
 
             
-            <p>No List item. </p>
-            
+            {!list.length && toggleForm && <div className='no-item'>
+
+                <p>Oops....no list item  </p>
+                <p>Please insert item</p>
+                </div>}
+
+
+             
             {list && list.map((list)=>{
                return <div key={list.id} className={styles.list_card}
                onDoubleClick={()=>reverseReminder(list.id)}  style={list.reminder?{borderLeft:'9px solid green'}:{}} >
