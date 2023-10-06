@@ -31,7 +31,7 @@ const Home = () => {
             <Form  formShow={formShow} />
 
             
-            {!list.length && toggleForm && <div className='no-item'>
+            {list.length===0 && toggleForm && <div className='no-item'>
 
                 <p>Oops....no list item  </p>
                 <p>Please insert item</p>
